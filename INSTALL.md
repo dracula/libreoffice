@@ -12,7 +12,10 @@ Download using the [GitHub .zip download](https://github.com/dracula/libreoffice
 
 #### Activating theme
 
-1. Copy `dracula.soc` to `~/.config/libreoffice/*/user/config/` (Linux) or
-   `C:\Program Files\LibreOffice\share\palette` (Windows)
-2. Choose the dracula palette when picking a color in LibreOffice
+1. Copy `dracula.soc` to `~/.config/libreoffice/*/user/config/` (Linux),
+   `C:\Program Files\LibreOffice\share\palette` (Windows), or
+   `~/Library/Application Support/LibreOffice/*/user/config/` (macOS).
+2. Choose the dracula palette when picking a color in LibreOffice. In macOS,
+   you can choose the theme in *Preferences -> LibreOffice -> Application
+   Colors*
 3. Boom! It's working
