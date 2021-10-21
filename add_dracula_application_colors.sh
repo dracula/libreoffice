@@ -23,7 +23,9 @@ fi
 if ! [ -f "$fname" ]; then
 	echo "Settings file doesn't exist in expected location, aborting..."
 	exit 1
-elif ! tail -n1 "$fname" | egrep -q '^</oor:items>$'; then
+elif ! head -n1 "$fname" | egrep -q '^<\?xml version\=' ||
+		! head -n2 "$fname" | tail -n1 | egrep -q '^<oor:items'
+then
 	echo "Settings file doesn't match expected format, aborting..."
 	exit 1
 fi
@@ -38,16 +40,13 @@ theme_line="$(echo "$existing_theme" | sed 's|:.*||')"
 if [ $exit_code -eq 0 ]; then
 	echo "Dracula theme appears to already be installed, replacing..."
 	# replace existing theme line
-	settings_start="$(head -n $theme_line "$fname" | head -n -1)"
-	settings_end="$(tail -n +$theme_line "$fname" | tail -n +2)"
-	new_settings="$(echo "$settings_start" \
-	             && cat dracula.xcu \
-				 && echo "$settings_end")"
+	sed -i 's|<item oor:path="/org.openoffice.Office.UI/ColorScheme/ColorSchemes"><node oor:name="dracula"'"|$(cat dracula.xcu | tr -d '\n')|" \
+		"$fname"
 else
-	# insert theme between last two lines
-	new_settings="$(head -n -1 "$fname" && cat dracula.xcu \
-					&& tail -n1 "$fname")"
+	# insert theme after first two lines
+	new_settings="$(head -n2 "$fname" && cat dracula.xcu \
+					&& tail -n +3 "$fname")"
+	# write new settings to settings file
+	echo "$new_settings" > "$fname"
 fi
 
-# write new settings to settings file
-echo "$new_settings" > "$fname"
