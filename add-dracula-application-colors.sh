@@ -1,8 +1,8 @@
-#!/usr/bin/env sh
+#!/usr/bin/env dash
 
 # Check OS platform
 if [ "$(uname)" = "Linux" ]; then
-	fname=$XDG_CONFIG_HOME/libreoffice/*/user/registrymodifications.xcu
+	fname=${XDG_CONFIG_HOME:-$HOME/.config}/libreoffice/*/user/registrymodifications.xcu
 elif [ "$(uname)" = "Darwin" ]; then
 	fname=$HOME/Library/Application Support/LibreOffice/*/user/config/
 else
@@ -14,7 +14,7 @@ fi
 fname=$(realpath $fname)
 
 # Create backup of LibreOffice registry before modifications
-cp "$fname" registrymodifications.xcu.bak
+cp -i "$fname" registrymodifications.xcu.bak
 
 # Check settings file
 if ! [ -f "$fname" ]; then
