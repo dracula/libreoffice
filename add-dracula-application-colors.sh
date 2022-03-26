@@ -1,4 +1,4 @@
-#!/usr/bin/env dash
+#!/bin/sh
 
 # Check OS platform
 if [ "$(uname)" = "Linux" ]; then

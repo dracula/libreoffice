@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 echo "Copying palette to config directory ..."
 cp dracula.soc "${XDG_CONFIG_HOME:-$HOME/.config}"/libreoffice/*/user/config/
