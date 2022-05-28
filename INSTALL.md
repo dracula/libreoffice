@@ -12,7 +12,7 @@ Download using the [GitHub .zip download](https://github.com/dracula/libreoffice
 
 #### Activating Palette
 
-1. Copy `dracula.soc` to `~/.config/libreoffice/*/user/config/` (Linux),
+1. Copy `dracula.soc` to `~/.config/libreoffice/*/user/config/` (FreeBSD & Linux),
    `C:\Program Files\LibreOffice\share\palette` (Windows), or
    `~/Library/Application Support/LibreOffice/*/user/config/` (macOS).
 2. Choose the dracula palette when picking a color in LibreOffice.
@@ -26,8 +26,8 @@ first saves a backup to* `registrymodifications.xcu.bak`, *which you can use if
 anything goes wrong*.
 
 1. Run `./add-dracula-application-colors.sh` to add the Dracula option to the
-   settings file.
-2. Choose Dracula in *Tools -> Options -> Application Colors* (Linux) or
+   settings file. Run `./add-Freebsd-dracula-application-colors.sh` for FreeBSD.
+2. Choose Dracula in *Tools -> Options -> Application Colors* (FreeBSD & Linux) or
    *Preferences -> LibreOffice -> Application Colors* (macOS)
 
 ![Activating Dracula theme](https://raw.githubusercontent.com/dracula/libreoffice/master/screenshot-application-colors.png)
