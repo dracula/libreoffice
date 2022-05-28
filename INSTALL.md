@@ -26,7 +26,7 @@ first saves a backup to* `registrymodifications.xcu.bak`, *which you can use if
 anything goes wrong*.
 
 1. Run `./add-dracula-application-colors.sh` to add the Dracula option to the
-   settings file. Run `./add-Freebsd-dracula-application-colors.sh` for FreeBSD.
+   settings file. Run `./add-FreeBSD-dracula-application-colors.sh` for FreeBSD.
 2. Choose Dracula in *Tools -> Options -> Application Colors* (FreeBSD & Linux) or
    *Preferences -> LibreOffice -> Application Colors* (macOS)
 
