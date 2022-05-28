@@ -30,14 +30,14 @@ theme_line="$(echo "$existing_theme" | sed 's|:.*||')"
 if [ $exit_code -eq 0 ]; then
 	echo "Dracula theme appears to already be installed. Replacing it ..."
 	# Replace existing line with
-	settings_start="$(head -n $theme_line $fname | sed\$d)"
- 12         settings_end="$(tail -n $theme_line $fname | tail -n 2)"
- 13         new_settings="$(echo "$settings_start" \
- 14                      && cat dracula.xcu \
- 15                                  && echo "$settings_end")"
+	settings_start="$(head -n $theme_line $fname | sed \$d)"
+	settings_end="$(tail -n +$theme_line $fname | tail -n +2)"
+        new_settings="$(echo "$settings_start" \
+                       && cat dracula.xcu \
+                       && echo "$settings_end")"
 else
 	# Insert theme between last two lines if not present
-	new_settings="$(sed\$d $fname && cat dracula.xcu && tail -n 1 $fname)"
+	new_settings="$(sed \$d $fname && cat dracula.xcu && tail -n 1 $fname)"
 fi
 
 # Write new settings to settings file
