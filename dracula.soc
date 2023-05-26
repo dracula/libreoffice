@@ -12,6 +12,6 @@
 <draw:color draw:name="Pink"          draw:color="#ff79c6"/>
 <draw:color draw:name="Red"           draw:color="#ff5555"/>
 <draw:color draw:name="Orange"        draw:color="#ffb86c"/>
-<draw:color draw:name="Yellow "       draw:color="#f1fa8c"/>
+<draw:color draw:name="Yellow"        draw:color="#f1fa8c"/>
 
 </office:color-table>
