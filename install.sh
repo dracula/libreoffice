@@ -11,5 +11,10 @@ else
 	echo "Unsupported operating system. Aborting ..."
 fi
 
-echo "Running add-dracula-application-colors.sh ..."
-./add-dracula-application-colors.sh
+if [ "$(uname)" = "FreeBSD" ]; then
+	echo "Running add-FreeBSD-dracula-application-colors.sh ..."
+	./add-FreeBSD-dracula-application-colors.sh
+else
+	echo "Running add-dracula-application-colors.sh ..."
+	./add-dracula-application-colors.sh
+fi
