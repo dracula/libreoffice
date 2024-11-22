@@ -19,19 +19,28 @@ Download using the [GitHub .zip download](https://github.com/dracula/libreoffice
 
 ![Choosing dracula palette](https://raw.githubusercontent.com/dracula/libreoffice/master/screenshot-palette-menu.png)
 
-#### Activating Application Colors (Linux and macOS only)
+#### Activating Application Colors
 
 *Note that this is a bit experimental and might break your settings file. It
 first saves a backup to* `registrymodifications.xcu.bak`, *which you can use if
 anything goes wrong*.
 
 1. Run `./add-dracula-application-colors.sh` to add the Dracula option to the
-   settings file.
-2. Choose Dracula in *Tools -> Options -> Application Colors* (Linux) or
-   *Preferences -> LibreOffice -> Application Colors* (macOS)
+   settings file (Linux and macOS only).
+
+   Alternatively (such as for Windows), manually create a backup of
+   `registrymodifications.xcu.bak`, such as in
+   `C:\Users\<user>\AppData\Roaming\LibreOffice\4\user`, then edit it,
+   pasting in the contents of `dracula.xcu` before the `</oor:items>` line.
+
+2. Choose Dracula in *Tools -> Options -> Application Colors* (Linux or
+   Windows) or *Preferences -> LibreOffice -> Application Colors* (macOS)
 
 ![Activating Dracula theme](https://raw.githubusercontent.com/dracula/libreoffice/master/screenshot-application-colors.png)
 
 ### Installing Palette and Theme
 
-In case both color palette and theme should be added, run `install.sh` which executes the `cp` command for adding the color palette and then runs `add-dracula-application-colors.sh` to add the Dracula theme as an application color for LibreOffice.
+In case both color palette and theme should be added, run `install.sh`
+which executes the `cp` command for adding the color palette and then
+runs `add-dracula-application-colors.sh` to add the Dracula theme as an
+application color for LibreOffice (Linux and macOS only).
