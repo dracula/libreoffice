@@ -29,7 +29,7 @@ anything goes wrong*.
    settings file (Linux and macOS only).
 
    Alternatively (such as for Windows), manually create a backup of
-   `registrymodifications.xcu.bak`, such as in
+   `registrymodifications.xcu`, such as in
    `C:\Users\<user>\AppData\Roaming\LibreOffice\4\user`, then edit it,
    pasting in the contents of `dracula.xcu` before the `</oor:items>` line.
 
